@@ -1,4 +1,7 @@
-const  = PropertiesService.getScriptProperties().getProperty('authToken') || ''
+const sheetUrl = "your-sheet-url";
+const sheetName = "target-sheet-name";
+
+const authKey = PropertiesService.getScriptProperties().getProperty('authKey') || ''
 
 function response(content) {
   const res = ContentService.createTextOutput();
@@ -16,7 +19,7 @@ function doGet(e){
 
   try{
     switch(method){
-      case "test":8
+      case "test":
         res = onTest(key);
         break;
       case "get":

@@ -4,7 +4,7 @@ function onTest(key){
   if(res == 1){
     res = {
       status: "success",
-      message: "Correct API key."
+      message: "Welcome to getStudent API"
     };
   }
 

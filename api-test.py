@@ -1,19 +1,13 @@
 import requests
 import json
 
-url = 'https://script.google.com/macros/s/AKfycbyZOW3jG15L7Lyi_AmGjx5FM0PykVChs7B-Wh2xA8BmsnZF3jSi9MIH8JpYKf9mC3FX/exec'
-token = 'testToken'
+url = 'api-url'
+key = 'api-key'
+method = 'api-method'
 
-print(url+'?authToken='+token)
-res = requests.get(url+'?authToken='+token)
-print(json.loads(res.text))
+requestUrl = url+'?key='+key+'&method='+method
 
-# if __name__ == '__main__':
-#     response = requests.get(
-#         url,
-#         params={
-#           "authToken": 'testToke'
-#         },
-#     )
+res = requests.get(requestUrl)
+data = json.loads(res.text)
 
-#     print(json.loads(response.text))
+print(json.dumps(data, indent=2))

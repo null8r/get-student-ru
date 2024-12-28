@@ -5,7 +5,7 @@ function authCheck(key){
       message: "Require API key."
     };
   }
-  else if(key === authToken){
+  else if(key === authKey){
     authCheck_res = 1;
   }
   else{
