@@ -4,13 +4,14 @@ function getStudent(){
   const sheet = SpreadsheetApp.openByUrl(sheetUrl).getSheetByName(sheetName);
 
   const lastRow = sheet.getLastRow()-1;
-  const values = sheet.getRange(2, 2, lastRow, 3).getValues();
+  const values = sheet.getRange(2, 2, lastRow, 4).getValues();
 
   for(let i = 0; i < values.length; i++){
     res_studentInfo.push({
       mail: values[i][0],
       studentId: values[i][1],
-      skill: values[i][2]
+      name: values[i][2],
+      skill: values[i][3]
     });
   }
   console.log(res_studentInfo);
